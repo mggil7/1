@@ -11,7 +11,9 @@ Amplify.configure(config);
 
 ReactDOM.render(
   <React.StrictMode>
+    <AmplifyProvider>
     <App />
+    </AmplifyProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
