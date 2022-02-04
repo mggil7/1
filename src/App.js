@@ -82,25 +82,25 @@ setGasesData (newGasesList)
   return (
     <div>
         <form onSubmit={handleSubmit}>
-            <input placeholder ='enter a name' name='petName'/> 
-            <input placeholder ='enter a description' name='petDescription'/>
-            <select name="petType">
+            <input placeholder ='enter deviceID' name='deviceID'/> 
+            <input placeholder ='enter a DATA' name='DATA'/>
+            <select name="He">
               <option value="none" disabled>
                 Please select a pet
               </option>
-              <option value='dog'>Dog</option>
-              <option value='cat'>Cat</option>
-              <option value='rabbit'>Rabbit</option>
-              <option value='turtle'>Turtle</option>
+              <option value='He'>He</option>
+              <option value='ARS'>ARS</option>
+              <option value='N2'>N2</option>
+              <option value='ARG'>ARG</option>
             </select>
-            <button>Create a Pet</button>
+            <button>Create a new record</button>
         </form>
         <main>
           <ul> 
-            {petData.map((pet) => (
+            {gasesData.map((gases) => (
               <li
-                onClick = {(e) => {handlePetDelete(pet.id)}}
-                key={pet.id}
+                onClick = {(e) => {handleGasesDelete(gases.id)}}
+                key={gases.id}
                 style={{
                   listStyle: 'none',
                   border: '1px solid black',
@@ -109,9 +109,9 @@ setGasesData (newGasesList)
                 }}
                 >
                   <article>
-                      <h3>{pet.name}</h3>
-                      <h5>{pet.type}</h5>
-                      <p>{pet.description}</p>
+                      <h3>{gases.deviceID}</h3>
+                      <h5>{gases.DATA}</h5>
+                      <p>{gases.He}</p>
 
 
                   </article>
