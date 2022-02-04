@@ -3,17 +3,17 @@
     id: ID!
     deviceID: String!
     DATA: String!
-    He: Number!
-    ARS: Number!
-    N2: Number!
-    ARG: Number!
+    He: Float!
+    ARS: Float!
+    N2: Float!
+    ARG: Float!
     wd: String!
     Ux: String!
-    vb1: Number!
-    vb2: Number!
-    vb3: Number!
-    vb4: Number!
-    createdAt: DateTime!
-    updatedAt: DateTime!
+    vb1: Float!
+    vb2: Float!
+    vb3: Float!
+    vb4: Float!
+    createdAt: AWSDateTime!
+    updatedAt: AWSDateTime!
 
   }
