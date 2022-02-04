@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "m1todynamodb",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "E:\\00000000-AWS\\amplify5_DynamoDB\\m1todynamodb\\amplify\\backend\\api\\m1todynamodb\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authm1todynamodb8b5a166a"
+    }
+  }
+}

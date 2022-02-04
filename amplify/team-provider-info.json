@@ -14,6 +14,17 @@
     "categories": {
       "auth": {
         "m1todynamodb8b5a166a": {}
+      },
+      "storage": {
+        "AliineTable": {
+          "tableName": "AliineTable",
+          "region": "sa-east-1",
+          "arn": "arn:aws:dynamodb:sa-east-1:432467884859:table/AliineTable",
+          "partitionKeyName": "deviceID",
+          "partitionKeyType": "S",
+          "sortKeyName": "DATA",
+          "sortKeyType": "S"
+        }
       }
     }
   }
