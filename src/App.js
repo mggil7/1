@@ -82,8 +82,18 @@ setGasesData (newGasesList)
   return (
     <div>
         <form onSubmit={handleSubmit}>
-            <input placeholder ='enter deviceID' name='deviceID'/> 
+            <input placeholder ='enter  a deviceID' name='deviceID'/> 
             <input placeholder ='enter a DATA' name='DATA'/>
+            <input placeholder ='enter Pressão Hélio' name='He'/>
+            <input placeholder ='enter Pressão Ar Sintético' name='ARS'/>
+            <input placeholder ='enter Pressão Nitrogênio' name='N2'/>
+            <input placeholder ='enter Pressão Argônio' name='ARG'/>
+            <input placeholder ='enter Dia da Semana' name='wd'/>
+            <input placeholder ='enter Hora "Epoch"' name='Ux'/>
+            <input placeholder ='enter Bateria Gás 1' name='vb1'/>
+            <input placeholder ='enter Bateria Gás 2' name='vb2'/>
+            <input placeholder ='enter Bateria Gás 3' name='vb3'/>
+            <input placeholder ='enter Bateria Gás 4' name='vb4'/>
             <select name="He">
               <option value="none" disabled>
                 Please select a pet
