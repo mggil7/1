@@ -68,7 +68,7 @@ export const onDeleteGases = /* GraphQL */ `
   }
 `;
 
-export const newonCreateGases = /* GraphQL */ `
+export const newOnCreateGases = /* GraphQL */ `
   subscription NewOnCreateGases($owner: String) {
     newonCreateGases(owner: $owner) {
       id
@@ -90,7 +90,7 @@ export const newonCreateGases = /* GraphQL */ `
     }
   }
 `;
-export const newonUpdateGases = /* GraphQL */ `
+export const newOnUpdateGases = /* GraphQL */ `
   subscription NewOnUpdateGases($owner: String) {
     newonUpdateGases(owner: $owner) {
       id
@@ -112,7 +112,7 @@ export const newonUpdateGases = /* GraphQL */ `
     }
   }
 `;
-export const newonDeleteGases = /* GraphQL */ `
+export const newOnDeleteGases = /* GraphQL */ `
   subscription NewOnDeleteGases($owner: String) {
     newonDeleteGases(owner: $owner) {
       id

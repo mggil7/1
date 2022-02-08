@@ -135,11 +135,15 @@ setGasesData (newGasesList)
 
 
               </li>
-            ))}
+            )
+            )
+            }
             </ul>
+
+            {Homepage} 
         </main>
 
-        <Route path="/" exact component={Homepage}/>
+       
      
     </div>
 
