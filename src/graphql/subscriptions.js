@@ -67,3 +67,70 @@ export const onDeleteGases = /* GraphQL */ `
     }
   }
 `;
+
+export const newonCreateGases = /* GraphQL */ `
+  subscription NewOnCreateGases($owner: String) {
+    newonCreateGases(owner: $owner) {
+      id
+      deviceID
+      DATA
+      He
+      ARS
+      N2
+      ARG
+      wd
+      Ux
+      vb1
+      vb2
+      vb3
+      vb4
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const newonUpdateGases = /* GraphQL */ `
+  subscription NewOnUpdateGases($owner: String) {
+    newonUpdateGases(owner: $owner) {
+      id
+      deviceID
+      DATA
+      He
+      ARS
+      N2
+      ARG
+      wd
+      Ux
+      vb1
+      vb2
+      vb3
+      vb4
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const newonDeleteGases = /* GraphQL */ `
+  subscription NewOnDeleteGases($owner: String) {
+    newonDeleteGases(owner: $owner) {
+      id
+      deviceID
+      DATA
+      He
+      ARS
+      N2
+      ARG
+      wd
+      Ux
+      vb1
+      vb2
+      vb3
+      vb4
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;

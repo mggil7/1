@@ -6,9 +6,9 @@ import { Storage, API, graphqlOperation } from "aws-amplify";
 import { listGases, getGases } from "../graphql/queries";
 
 import {
-  OnCreateGases,
-  OnUpdateGases,
-  OnDeleteGases,
+  newOnCreateGases,
+  newOnUpdateGases,
+  newOnDeleteGases,
 } from "../graphql/subscriptions";
 
 function HomePage() {
@@ -30,6 +30,64 @@ function HomePage() {
   let subscriptionOnCreate;
   let subscriptionOnDelete;
   let subscriptionOnUpdate;
+
+
+  function setupSubscriptions() {
+    subscriptionOnCreate = API.graphql(
+      graphqlOperation(newOnCreateGases)
+    ).subscribe({
+      next: (gasesData) => {
+        setGases(gasesData);
+      },
+    });
+
+    subscriptionOnDelete = API.graphql(
+      graphqlOperation(newOnDeleteGases)
+    ).subscribe({
+      next: (gasesData) => {
+        setPicture(gasesData);
+      },
+    });
+
+    subscriptionOnUpdate = API.graphql(
+      graphqlOperation(newOnUpdateGases)
+    ).subscribe({
+      next: (gasesData) => {
+        setPicture(gasesData);
+      },
+    });
+  }
+
+  useEffect(() => {
+    setupSubscriptions();
+
+    return () => {
+      subscriptionOnCreate.unsubscribe();
+      subscriptionOnDelete.unsubscribe();
+      subscriptionOnUpdate.unsubscribe();
+    };
+  }, []);
+
+  const buildGasesArray = async (listGases) => {
+    return await getGasesList(listGases);
+  };
+
+  const getGasesList = async (gasesList) => {
+    return Promise.all(
+      gasesList.map(async (i) => {
+        return getOneFormatedGases(i);
+      })
+    );
+  };
+
+  const getOneFormatedGases = async (gases) => {
+    return {
+      src: await Storage.get(gases.file.key),
+      id: gases.id,
+  
+    };
+  };
+
 
 }
 
