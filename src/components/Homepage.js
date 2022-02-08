@@ -80,15 +80,24 @@ function HomePage() {
     );
   };
 
-  const getOneFormatedGases = async (gases) => {
+  const getOneFormatedGases = async (gas) => {
     return {
-      src: await Storage.get(gases.file.key),
-      id: gases.id,
+      src: await Storage.get(gas.file.key),
+      id: gas.id,
   
     };
   };
 
+  return (
+    <div className="HomePage">
+        <div>
+            <h1>HomePage Gases</h1>
+         
+        </div>
+            <Gas gases = {gases}/>
 
+    </div>
+  );
 }
 
 export default HomePage;

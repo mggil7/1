@@ -1,4 +1,6 @@
 
+import React from 'react';
+import { Router, Route } from "react-router-dom";
 import './App.css';
 
 import {withAuthenticator} from '@aws-amplify/ui-react'
@@ -9,6 +11,10 @@ import { useEffect, useState } from 'react';
 import {createGases, deleteGases} from './graphql/mutations'
 
 import { listGases } from './graphql/queries'
+
+//import HomePage from './components/HomePage';
+
+import HomePage from './components/HomePage';
 
 function App() {
 
@@ -131,6 +137,9 @@ setGasesData (newGasesList)
             ))}
             </ul>
         </main>
+
+        <Route path="/" exact component={HomePage}/>
+     
     </div>
 
 
