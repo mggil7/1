@@ -3,18 +3,19 @@ import React from 'react';
 import { Router, Route } from "react-router-dom";
 import './App.css';
 
+import awsExports from "./aws-exports";
+
 import {withAuthenticator} from '@aws-amplify/ui-react'
 
 import { API } from 'aws-amplify'
 import { useEffect, useState } from 'react';
 
-import {createGases, deleteGases} from './graphql/mutations'
+import {createGases, deleteGases} from './graphql/mutations';
 
-import { listGases } from './graphql/queries'
+import { listGases } from './graphql/queries';
 
-//import HomePage from './components/HomePage';
+import Homepage from './components/Homepage';
 
-import HomePage from './components/HomePage';
 
 function App() {
 
@@ -138,7 +139,7 @@ setGasesData (newGasesList)
             </ul>
         </main>
 
-        <Route path="/" exact component={HomePage}/>
+        <Route path="/" exact component={Homepage}/>
      
     </div>
 

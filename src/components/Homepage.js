@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./HomePage.css";
+import "./Homepage.css";
 
 
 import { Storage, API, graphqlOperation } from "aws-amplify";
@@ -10,8 +10,9 @@ import {
   newOnUpdateGases,
   newOnDeleteGases,
 } from "../graphql/subscriptions";
+import { createGases } from "../graphql/mutations";
 
-function HomePage() {
+function Homepage(props) {
 
     const [gases, setGases]=useState();
 
@@ -45,7 +46,7 @@ function HomePage() {
       graphqlOperation(newOnDeleteGases)
     ).subscribe({
       next: (gasesData) => {
-        setPicture(gasesData);
+        setGases(gasesData);
       },
     });
 
@@ -53,7 +54,7 @@ function HomePage() {
       graphqlOperation(newOnUpdateGases)
     ).subscribe({
       next: (gasesData) => {
-        setPicture(gasesData);
+        setGases(gasesData);
       },
     });
   }
@@ -94,10 +95,10 @@ function HomePage() {
             <h1>HomePage Gases</h1>
          
         </div>
-            <Gas gases = {gases}/>
+            <createGases gases = {gases}/>
 
     </div>
   );
 }
 
-export default HomePage;
+export default Homepage;
