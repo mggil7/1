@@ -10,3 +10,27 @@ import {
   OnUpdateGases,
   OnDeleteGases,
 } from "../graphql/subscriptions";
+
+function HomePage() {
+
+    const [gases, setGases]=useState();
+
+    const getAllGasesToState = async () => {
+
+        const result = await API.graphql(graphqlOperation(listGases));
+        let gasesArray = await buildGasesArray(result.data.listGases.items);
+        setGases(gasesArray);
+    };
+
+    useEffect(() => {
+        getAllGasesToState();
+    }, [gases]);
+
+    
+  let subscriptionOnCreate;
+  let subscriptionOnDelete;
+  let subscriptionOnUpdate;
+
+}
+
+export default HomePage;
